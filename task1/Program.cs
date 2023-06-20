@@ -3,8 +3,16 @@
 // a = 2 b = 10 -> max = 10
 // a = -9 b = -3 -> max = -3
 
-int a = -9;
-int b = -3;
+
+
+Console.WriteLine("Введите первое число");
+string NumberString = Console.ReadLine();
+Console.WriteLine("Введите второе число");
+string NumberString2 = Console.ReadLine();
+int NumberInt = Convert.ToInt32(NumberString);
+int NumberInt2 = Convert.ToInt32(NumberString2);
+int a = NumberInt;
+int b = NumberInt2;
 if (a > b)
 {
     Console.WriteLine("Max = " + a);
