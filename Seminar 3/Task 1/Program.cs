@@ -6,9 +6,9 @@
 Console.WriteLine("Введите пятизначное число:");
 int Number = Convert.ToInt32(Console.ReadLine());
 
-if (checkNum > 9999 && checkNum < 100000)
+if (Number > 9999 && Number < 100000)
 {
-    if (checkNum / 10000 == checkNum % 10 && checkNum / 1000 % 10 == checkNum % 100 / 10)
+    if (Number / 10000 == Number % 10 && Number / 1000 % 10 == Number % 100 / 10)
     {
         Console.WriteLine("Да");
     }
