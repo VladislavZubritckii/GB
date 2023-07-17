@@ -15,7 +15,7 @@ double[,] GetRandomMatrix(int rows, int columns)
     {
         for(int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = Convert.ToDouble(rnd.Next(-10, 10));
+            matrix[i, j] = Convert.ToDouble(rnd.Next(-99, 99) / 10.0);
         }
     }
 return matrix;

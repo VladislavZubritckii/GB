@@ -9,61 +9,44 @@
 // 1, 7 -> такого числа в массиве нет
 // 1, 2 -> 2
 
-int[,] GetRandomMatrix( int rows, int columns)
+
+
+
+int rows = ReadInt("Введите индекс строки: ");
+int colums = ReadInt("Введите индекс столбца: ");
+int[,] numbers = new int[6, 8];
+FillArray2D(numbers);
+PrintArray2D(numbers);
+
+if (rows < numbers.GetLength(0) && colums < numbers.GetLength(1)) Console.WriteLine(numbers[rows, colums]);
+else Console.WriteLine($"{rows}{colums} -> такого числа в массиве нет");
+
+void FillArray2D(int[,] array)
 {
-    int[,] matrix = new int[rows, columns];
-    for(int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for(int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            matrix[i, j] = matrix[i, j] = Random.Shared.Next(1, 20);
+            array[i, j] = new Random().Next(1, 10);
         }
     }
-return matrix;
 }
 
-void PrintMatrix(int[,] matrix)
+void PrintArray2D(int[,] array)
 {
-    for(int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for(int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j]}\t");
+            Console.Write(array[i, j] + " ");
         }
         Console.WriteLine();
     }
+    Console.WriteLine();
 }
 
-int[,] myMatrix = GetRandomMatrix(5, 5);
-PrintMatrix(myMatrix);
-
-Console.WriteLine("введите строку позиции числа:");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("введите столбец позиции числа:");
-int b = Convert.ToInt32(Console.ReadLine());
-
-int Number(int[,] matrix)
+int ReadInt(string message)
 {
-    int number = 0;
-    for(int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for(int j = 0; j < matrix.GetLength(1); j++)
-        {
-            if(i == (a - 1) && j == (b - 1))
-            {
-                number = matrix[i, j];
-            }
-        }
-    }
-    return number;    
-}
-
-if(a > 5 || b > 5)
-{
-    Console.WriteLine("Число, на указанной позиции не найдено");
-}
-else
-{
-int number = Number(myMatrix);
-Console.WriteLine($"Число, на указанной позиции:{number}");
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
 }
