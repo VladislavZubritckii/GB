@@ -9,19 +9,19 @@
 # 4 4 -> 2 2
 # 5 6 -> 2 3
 import random
-x = (random.randint(1,10))
-y = (random.randint(1,10))
+x = (random.randint(1,1000))
+y = (random.randint(1,1000))
 Sum = x + y
 multiply = x * y
-print(Sum)
-print(multiply)
+print("Сумма этих двух чисел : " + str(Sum))
+print("Произведение этих двух чисел : " + str(multiply))
 answer1 = int(input("Попробуй угадать первое число : "))
-if answer1 == x or y:
+if answer1 == x or answer1 == y:
     print("Ты угадал число!")
 else:
     print("К сожалению это не то число :( ")
 answer2 = int(input("Попробуй угадать второе число : "))
-if answer2 == y or x:
+if answer2 == y or answer2 == x:
     print("Ты угадал число!")
 else:
     print("К сожалению это не то число :(")
