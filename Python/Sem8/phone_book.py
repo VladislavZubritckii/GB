@@ -58,7 +58,7 @@ def delete_contact():
                 if X in line:
                     lines.remove(line)
                 else:  
-                    file.write(line)
+                    file.write(lines)
 
 def interface():
     cmd = 0
